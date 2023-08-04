@@ -62,5 +62,3 @@ global.tssprites = [
 	s_null,
 ]
 
-global.tiletypes = array_create_deref(TILESET.SIZE, []);
-#macro tl global.tiletypes

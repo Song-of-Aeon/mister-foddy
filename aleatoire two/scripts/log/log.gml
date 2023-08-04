@@ -1,4 +1,5 @@
 ///@function log(data[...]);
+#macro BROWSER (os_browser != browser_not_a_browser)
 function log() {
 	if(typeof(argument[0]) == "struct") && BROWSER { //display as-is for the nice inspector in js console
 		show_debug_message(argument[0]);	

@@ -1,4 +1,5 @@
-function input_active(input, type) {
+global.deadzone = .4;
+function input_active(input, type, axis=0) {
 	switch type {
 		case INPUT.PRESSED:
 			if typeof(input) == "string" {
@@ -14,9 +15,12 @@ function input_active(input, type) {
 					case DEVICE.CONTROLLER:
 						return gamepad_button_check_pressed(0, input);
 						break;
+					case DEVICE.JOYSTICK:
+						if axis == 1 return global.joysticks[input].poshit;
+						if axis == -1 return global.joysticks[input].neghit;
+						break;
 				}
 			}
-			break;
 			break;
 		case INPUT.HELD:
 			if typeof(input) == "string" {
@@ -31,6 +35,14 @@ function input_active(input, type) {
 						break;
 					case DEVICE.CONTROLLER:
 						return gamepad_button_check(0, input);
+						break;
+					case DEVICE.JOYSTICK: //UH OH!
+						var val = gamepad_axis_value(0, input);
+						if abs(val) < global.deadzone return false;
+						//log(axis, val);
+						if axis > 0 && val < 0 return 0;
+						if axis < 0 && val > 0 return 0;
+						return true;
 						break;
 				}
 			}
@@ -50,8 +62,9 @@ function input_active(input, type) {
 					case DEVICE.CONTROLLER:
 						return gamepad_button_check_released(0, input);
 						break;
-					case DEVICE.JOYSTICK: //UH OH!
-						return gamepad_axis_value(0, input);
+					case DEVICE.JOYSTICK:
+						if axis == 1 return global.joysticks[input].posdrop;
+						if axis == -1 return global.joysticks[input].posdrop;
 						break;
 				}
 			}
@@ -81,6 +94,8 @@ function input_device(input) {
 		return DEVICE.JOYSTICK;
 	} else return DEVICE.KEYBOARD;
 }
+
+
 
 /*
 #macro pressed hit

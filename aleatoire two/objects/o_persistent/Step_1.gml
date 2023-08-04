@@ -1,2 +1,2 @@
-
+gc++;
 c_inputupdate();

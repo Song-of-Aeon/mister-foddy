@@ -35,7 +35,7 @@ draw_set_color(c_white);
 draw_set_alpha(1);
 draw_set_halign(fa_right);
 //draw_text(WIDTH-10, HEIGHT-20, st(c_tilequantizeval(mouse_x, -8)/global.tilesize+.5) + ", " + st(c_tilequantizeval(mouse_y, -8)/global.tilesize+.5));
-window_set_caption(st(c_tilequantizeval(mouse_x)/global.tilesize) + ", " + st(c_tilequantizeval(mouse_y)/global.tilesize));
+window_set_caption(string(c_tilequantizeval(mouse_x)/global.tilesize) + ", " + string(c_tilequantizeval(mouse_y)/global.tilesize));
 draw_set_halign(fa_left);
 
 

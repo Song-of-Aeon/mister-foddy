@@ -1,7 +1,7 @@
 only_one();
 
 
-reloadMaps();
+c_reloadmaps();
 
 global.timescale = 1;
 global.ticks = 1;

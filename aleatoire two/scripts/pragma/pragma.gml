@@ -7,6 +7,8 @@ global.textguy = {};
 global.fading = false;
 global.volume = 100;
 global.music = 100;
+global.tiletypes = array_create_deref(TILESET.SIZE, []);
+#macro tl global.tiletypes
 
 global.marineconstellation = font_add_sprite_ext(fts_marineconstellation,
 	"!\"#$%&'()*+,-"+
@@ -32,7 +34,7 @@ global.marineconstellation = font_add_sprite_ext(fts_marineconstellation,
 	""+
 	""+
 	""+
-	"", true, 1);
+	"", true, 2);
 #macro ft_marineconstellation global.marineconstellation
 
 globalvar ft_zpix;

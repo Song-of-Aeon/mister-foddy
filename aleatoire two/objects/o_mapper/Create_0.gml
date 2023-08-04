@@ -29,6 +29,7 @@ new mapsetting("tiles", [tl, ["lol"], ["background", "behind", "main", "front", 
 	statish("tilecount", 0);
 	palette = new vec2(WIDTH*1.665, HEIGHT*.4);
 	c_input();
+	//log(tl);
 	options[1] = tl[opos[0]];
 	if !array_length(options[2]) exit;
 	if mouse_within(palette.x, palette.y, WIDTH*2, HEIGHT*2) exit;
@@ -309,7 +310,7 @@ new mapsetting("save", [["really save?"]], function() {
 	if select {
 		log("balling");
 		with o_mapper {c_saveroom(roomname)};
-		reloadMaps();
+		c_reloadmaps();
 	}
 }, function() {
 	var z=0;
