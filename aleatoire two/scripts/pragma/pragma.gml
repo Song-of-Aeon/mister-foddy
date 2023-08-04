@@ -52,3 +52,4 @@ global.gameobjectvariables = [
 	"speed", "direction", "xprevious", "yprevious", "image_index", "image_xscale", "image_yscale", "image_blend", "image_index"
 ]
 
+global.bullets = {};
