@@ -1,7 +1,7 @@
 randomize();
 
-global.gw = 290;
-global.gh = 340;
+global.gw = 512;
+global.gh = 288;
 global.ratio = global.gh/global.gw;
 global.textguy = {};
 global.fading = false;

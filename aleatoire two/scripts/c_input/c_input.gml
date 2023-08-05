@@ -33,6 +33,7 @@ function c_inputupdate() {
 
 
 function c_inputload() {
+	log(mb_left, mb_right, vk_anykey, vk_nokey)
 	global.inputs = {};
 	nu kinput("left", [vk_left, "A"]);
 	nu kinput("down", [vk_down, "S"]);

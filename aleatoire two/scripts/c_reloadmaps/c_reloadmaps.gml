@@ -14,5 +14,6 @@ function c_reloadmaps() {
 		}
 	    file_name = file_find_next();
 	}
+	log("");
 	file_find_close();
 }

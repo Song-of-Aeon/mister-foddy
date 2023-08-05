@@ -49,82 +49,14 @@ eqwp = 0;
 altpos = 0;
 
 switch os_get_config() {
-	default:
-		sprites = {
-			idle: s_meidle,
-			walk: s_mewalk,
-			up: s_meup,
-			upwalk: s_meupwalk,
-			down: s_medown,
-		}
-		weapons = [
-			[wp.deagle],
-		];
-		state = st_standard;
-		drawstate = st_standarddraw;
-		break;
-	case "ultrakill":
-		sprites = {
-			idle: s_dc,
-			walk: s_v1,
-			up: s_v1,
-			upwalk: s_v1,
-			down: s_v1,
-		}
-		weapons = [
-			[wp.javelin, wp.coin],
-			[wp.shotgun, wp.deagle],
-			[wp.bounceback, wp.nicole_dunlap],
-		];
-		arm = [
-			wp.woodarm,
-		]
-		eqwp = 0;
-		eqarm = 0;
-		dashing = false;
-		stamina = 3;
-		slamduration = 0;
-		slamming = false;
-		sliding = false;
-		punchdelay = 0;
-		walljumps = 3;
-		state = st_v1;
-		drawstate = st_dcdraw;
-		break;
-	case "lily":
-		weapons = [
-			[wp.deagle],
-		];
-		sprites = {
-			idle: s_lily,
-			walk: s_lilyrun,
-			run: s_lilyfastrun,
-			up: s_lily,
-			upwalk: s_lily,
-			down: s_lily,
-			jump: s_lilyjump,
-		}
-		walkspeed = 1.7;
-		jumpspeed = 4.6;
-		grav = .12;
-		leniance = 6;
-		accel = .1;
-		airaccel = .1;
-		frict = .16;
-		airfrict = .08;
-		dashtime = 0;
-		state = st_lily;
-		drawstate = st_lilydraw;
-		sprite_index = s_kyblock;
-		break;
 	case "elsewhere":
 		sprites = {
-			idle: s_ky,
-			walk: s_ky,
-			up: s_ky,
-			upwalk: s_ky,
-			down: s_ky,
-			jump: s_kyjump,
+			idle: s_when_im,
+			walk: s_when_im,
+			up: s_when_im,
+			upwalk: s_when_im,
+			down: s_when_im,
+			jump: s_when_im,
 		}
 		/*sprites = {
 			idle: s_kyblock,
@@ -134,7 +66,7 @@ switch os_get_config() {
 			down: s_kyblock,
 			jump: s_kyblock,
 		}*/
-		sprite_index = s_kyblock;
+		sprite_index = s_when_im;
 		weapons = [
 			[wp.deagle],
 		];
@@ -146,8 +78,8 @@ switch os_get_config() {
 		airfrict = .01;
 		walkspeed = 2.1;
 		jumpspeed = 4;
-		state = st_ky;
-		drawstate = st_kydraw;
+		state = st_man;
+		drawstate = draw_self;
 		break;
 }
 faceangle = 0;

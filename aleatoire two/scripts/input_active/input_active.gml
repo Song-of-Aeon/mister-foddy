@@ -86,7 +86,7 @@ enum DEVICE {
 }
 
 function input_device(input) {
-	if input >= mb_left && input <= mb_none {
+	if input >= mb_left && input <= mb_side2 {
 		return DEVICE.MOUSE;
 	} else if input >= gp_face1 && input <= gp_padr {
 		return DEVICE.CONTROLLER;
