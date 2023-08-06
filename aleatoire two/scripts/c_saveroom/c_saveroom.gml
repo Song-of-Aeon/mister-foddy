@@ -45,8 +45,8 @@ function c_saveroom(filename, roomname_=u, returnearly=false) {
 				y: enemies[i].y,
 				name: enemies[i].name,
 				links: enemies[i].links,
-				depth: enemies[i].depth,
-				variation: enemies[i].variation,
+				//depth: enemies[i].depth,
+				//variation: enemies[i].variation,
 			}
 			/*if typeof(enemies[i].sprite) == "string" continue;
 			enemies[i].sprite = sprite_get_name(enemies[i].sprite);

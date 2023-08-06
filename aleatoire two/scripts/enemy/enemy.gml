@@ -9,7 +9,7 @@ function enemy(name_, sprite_, hp_,  step_=c_null, draw_=draw_self, create_=c_nu
 	variable_struct_set(global.enemies, name_, self);
 }
 
-function c_spawnenemy(x, y, archetype) {
+function c_spawnenemy(x, y, archetype, createevent=true) {
 	log(archetype);
 	var chump  = instance_create(x, y, o_enemy);
 	chump.hp = archetype.hp;
@@ -22,12 +22,20 @@ function c_spawnenemy(x, y, archetype) {
 		chump.draw = method(chump, archetype.draw);
 	chump.archetype = archetype;
 	c_tilequantize(chump);
+	if !createevent {
+		log("created");
+		method(chump, archetype.create)();
+	}
 	//method(chump, archetype.create)();
 	return chump;
 }
 
 nu enemy("impostor", s_when_the, 100);
 nu enemy("spawnpoint", s_when_im, 9999, c_spawnpointstep);
+nu enemy("point", s_point, infinity, u, u, function() {
+	log("AUIOSEHNDFIOSUJFHNIOSDHNJUFIOHNUJB");
+	array_push(global.points, new vec2(x, y));
+});
 
 function c_spawnpointstep() {
 	log("ha ha");
@@ -53,3 +61,9 @@ function c_spawnpointstep() {
 //spare-me-the sympathies
 //everybody wants to be
 //my enemy()
+
+function sped() constructor {
+	h = 0;
+	v = 0;
+	d = 0;
+}

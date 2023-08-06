@@ -131,7 +131,7 @@ new mapsetting("entities", [["enemies"], ["lol"], ["enabled", "disabled"]], func
 		ds_list_destroy(thelist);
 		var thing = deep_copy(en[$options[1][opos[1]]]);
 		//log(thing);
-		var chump = c_spawnenemy(mouse_x, mouse_y, thing);
+		var chump = c_spawnenemy(mouse_x, mouse_y, thing, false);
 		chump.step = c_null;
 		chump.thing = thing;
 		chump.image_speed = 0;
@@ -324,7 +324,7 @@ new mapsetting("load", [["edit mode", "play game"], variable_struct_get_names(mp
 	options[1] = variable_struct_get_names(mp);
 	if select {
 		var friend = mp[$options[1][opos[1]]];
-		c_loadmap(friend);
+		c_loadmap(friend, opos[0]);
 		if opos[0] {
 			instance_destroy(o_mapper);
 			//log("enemied");

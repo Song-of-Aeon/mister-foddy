@@ -7,6 +7,7 @@ global.textguy = {};
 global.fading = false;
 global.volume = 100;
 global.music = 100;
+global.points = [];
 global.tiletypes = array_create_deref(TILESET.SIZE, []);
 #macro tl global.tiletypes
 

@@ -16,16 +16,6 @@ defense = 0;
 
 cameratarg = new vec2();
 cameradelay = 0;
-wingpos = [
-	new vec2(),
-	new vec2(),
-	new vec2(),
-	new vec2(),
-	new vec2(),
-	new vec2(),
-	new vec2(),
-	new vec2(),
-]
 
 accel = .1;
 frict = .1;
@@ -48,40 +38,41 @@ inv = 0;
 eqwp = 0;
 altpos = 0;
 
-switch os_get_config() {
-	case "elsewhere":
-		sprites = {
-			idle: s_when_im,
-			walk: s_when_im,
-			up: s_when_im,
-			upwalk: s_when_im,
-			down: s_when_im,
-			jump: s_when_im,
-		}
-		/*sprites = {
-			idle: s_kyblock,
-			walk: s_kyblock,
-			up: s_kyblock,
-			upwalk: s_kyblock,
-			down: s_kyblock,
-			jump: s_kyblock,
-		}*/
-		sprite_index = s_when_im;
-		weapons = [
-			[wp.deagle],
-		];
-		grav = .16;
-		leniance = 12;
-		accel = .1;
-		airaccel = .04;
-		frict = .14;
-		airfrict = .01;
-		walkspeed = 2.1;
-		jumpspeed = 4;
-		state = st_man;
-		drawstate = draw_self;
-		break;
+
+sprites = {
+	idle: s_when_im,
+	walk: s_when_im,
+	up: s_when_im,
+	upwalk: s_when_im,
+	down: s_when_im,
+	jump: s_when_im,
 }
+/*sprites = {
+	idle: s_kyblock,
+	walk: s_kyblock,
+	up: s_kyblock,
+	upwalk: s_kyblock,
+	down: s_kyblock,
+	jump: s_kyblock,
+}*/
+sprite_index = s_when_im;
+weapons = [
+	[wp.pearl],
+];
+ppos = 0;
+pdist = 0;
+//points = [new vec2(100, 40), new vec2(200, 60), new vec2(250, 20)];
+points = global.points;
+grav = .16;
+leniance = 12;
+accel = .1;
+airaccel = .04;
+frict = .14;
+airfrict = .01;
+walkspeed = 2.1;
+jumpspeed = 4;
+state = st_ship;
+drawstate = st_shipdraw;
 faceangle = 0;
 spriteindex = 0;
 imageindex = 0;

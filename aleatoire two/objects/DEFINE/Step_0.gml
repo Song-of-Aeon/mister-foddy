@@ -1,4 +1,4 @@
-c_basichurting(false);
+//c_basichurting(false);
 hp = clamp(hp, 0, maxhp);
 repeat(c_getticks()){
 	gc++;

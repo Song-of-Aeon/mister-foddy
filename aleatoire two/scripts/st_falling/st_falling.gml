@@ -1,49 +1,7 @@
-function st_man() {
+function st_falling() {
 	//log(jump);
 	//log(weapons[eqwp]);
-	weapons[0][0].step(attack, alt);
-	accel = .1;
-	
-	if reload.hit || place_meeting(x, y, o_ship) {
-		c_boardship();
-	}
-	
-	
-	if left.hold dir = 180;
-	if right.hold dir = 0;
-	if down.hold dir = 270;
-	if up.hold dir = 90;
-	
-	
-    hput = right.hold-left.hold;
-    vput = down.hold-up.hold;
-	
-	//c_dospritesky();
-	
-	if hput != 0 {
-		spd.h = lerp(spd.h, hput*walkspeed, aerial ? airaccel : accel);
-	} else {
-		spd.h = lerp(spd.h, hput*walkspeed, aerial ? airfrict : frict);
-	}
 	spd.v += grav;
-    if leniance {
-        if jump.hit {
-			if spd.v > grav*2 {
-				//spd.h += spd.v*image_xscale*-2;
-				spd.h = -5.4*image_xscale;
-				spd.v = -jumpspeed*.68;
-			} else {
-				spd.v = -jumpspeed;
-			}
-            //spd.v -= jumpspeed;
-            leniance = 0;
-        }
-    }
-    if spd.v < 0 {
-        if jump.drop {
-            spd.v /= 2;
-        }
-    }
     //c_newcollision();
 	var oldtouching = deep_copy(touchers);
 	
@@ -71,6 +29,7 @@ function st_man() {
 	if array_length(ytouching) {
 		leniance = lencount;
         aerial = false;
+		state = st_man;
 		spd.v = 0;
 	} else {
 		var stepdowndist = global.tilesize/3;

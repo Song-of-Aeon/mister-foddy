@@ -1,4 +1,4 @@
-function c_loadmap(map_) {
+function c_loadmap(map_, editing=false) {
 	//log(map_);
 	with all {
 		if !persistent kys;
@@ -65,11 +65,12 @@ function c_loadmap(map_) {
 				log(map_.enemies[i].draw, script_get_index(map_.enemies[i].draw));
 				map_.enemies[i].draw = script_get_index(map_.enemies[i].draw);
 			}*/
-			var chump = c_spawnenemy(map_.enemies[i].x, map_.enemies[i].y, map_.enemies[i]);
+			log(map_.enemies[i]);
+			var chump = c_spawnenemy(map_.enemies[i].x, map_.enemies[i].y, friend/*map_.enemies[i]*/, !editing);
 			var newman = deep_copy(map_.enemies[i]);
 			chump.links = newman.links;
-			chump.depth = newman.depth;
-			chump.variation = newman.variation;
+			//chump.depth = newman.depth;
+			//chump.variation = newman.variation;
 			chump.thing = newman;
 			array_push(enemies, newman);
 			
