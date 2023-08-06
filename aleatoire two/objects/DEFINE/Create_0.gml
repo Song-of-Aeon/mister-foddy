@@ -57,7 +57,7 @@ sprites = {
 }*/
 sprite_index = s_when_im;
 weapons = [
-	[wp.pearl],
+	[wp[$"the commander video"]],
 ];
 ppos = 0;
 pdist = 0;
@@ -90,5 +90,5 @@ global.me = id;
 
 */
 
-camera_set_view_target(view_camera[0], global.me);
+camera_set_view_target(view_camera[0], o_persistent);
 camera_set_view_border(view_camera[0], MIDWID, MIDHEI);

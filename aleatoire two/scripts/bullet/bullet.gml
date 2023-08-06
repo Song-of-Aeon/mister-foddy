@@ -9,10 +9,7 @@
 /// @param {bool} [rotate_]=true should the sprite rotate in accordance with its direction
 /// @param {asset.gmsound} [sound_]=snd_shoot Description
 /// @param {function} [onhit_]=st_hurt Description
-function bullet(name_, sprite_=s_bulmistake, damage_=1, destructible_=true, friendly_=false, alpha_=1, draw_=c_bulletdraw, rotate_=true, sound_=friendly_ ? se_null : se_shootsmall, onhit_=st_hurt) constructor {
-	if friendly_ && sound_ == se_shootbig {
-		sound_ = se_null;
-	}
+function bullet(name_, sprite_=s_when_im, damage_=1, destructible_=true, friendly_=false, alpha_=1, draw_=c_bulletdraw, rotate_=true, sound_=se_null, onhit_=st_hurt) constructor {
 	sprite = sprite_;
 	colorable = asset_get_index(string(sprite_get_name(sprite_)) + "cc");
 	damage = damage_;

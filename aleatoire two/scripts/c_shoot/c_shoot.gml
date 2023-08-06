@@ -12,35 +12,9 @@
 /// @param {bool} [additive] use bm_add
 /// @param {bool} [silent] disable sound and spawn effect
 /// @returns {id.Instance} instance id
-	function c_shoot(x, y, speed, direction, type, color=c_white,  behavior=c_null, draw_=u, additive=false, silent=false) {
+function c_shoot(x, y, speed, direction, type, color=c_white,  behavior=c_null, draw_=u, additive=false, silent=false) {
 	var chump;
-	if(!BROWSER) //if we aint a bowser...
-		chump = instance_create_layer(x, y, layer_get_id(!additive ? "bullets" : "bullets_add"), o_bullet); //no more
-	else
-		chump = Stullet(x,y);
-	
-	throw("\nWINDOWS IS DEAD\nTHREADS ARE FUEL\nBUFFER IS FULL");
-	
-	//GO TO JSREPLACEMENTS
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	chump = instance_create(x, y, o_bullet); //no more
 	chump.spd = speed;
 	chump.dir = direction
 	chump.type = type;
@@ -51,8 +25,6 @@
 		sprite_index = type.sprite;
 		_sprite_width = sprite_width;
 		_sprite_height = sprite_height;
-		if(BROWSER) //code to set up bbox vars used in collision checks.
-			setUpBBOX(self)
 		friendly = type.friendly;
 		zfriendly = friendly;
 		damage = type.damage;
@@ -65,9 +37,7 @@
 		} else {
 			colorcover = s_null;
 		}
-		particling = type == bul.particle;
 		if friendly {
-			damage *= ISAAC.damage;
 			fxscale = 1;
 		}
 		image_angle = direction-90;
@@ -88,12 +58,6 @@
 		chump.draw = munction(draw_);
 	}
 	//event_typele
-	if silent == 1 {
-		chump.acount = chump.alpha;
-	} else if !global.ssounds[type.sound] {
-		chump.gravity_direction = se_play(type.sound, u, .5, .3 );
-		global.ssounds[type.sound] += 8;
-	}
 	if behavior == c_null {
 		chump.simple = true;
 	} else {

@@ -1,4 +1,4 @@
-pdist -= .2;
+pdist -= .5;
 	
 if pdist < 0 {
 	if ppos {

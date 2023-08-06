@@ -28,13 +28,7 @@ function st_man() {
 	spd.v += grav;
     if leniance {
         if jump.hit {
-			if spd.v > grav*2 {
-				//spd.h += spd.v*image_xscale*-2;
-				spd.h = -5.4*image_xscale;
-				spd.v = -jumpspeed*.68;
-			} else {
-				spd.v = -jumpspeed;
-			}
+			spd.v = -jumpspeed;
             //spd.v -= jumpspeed;
             leniance = 0;
         }
@@ -73,13 +67,12 @@ function st_man() {
         aerial = false;
 		spd.v = 0;
 	} else {
-		var stepdowndist = global.tilesize/3;
+		/*var stepdowndist = global.tilesize/3;
 		if !aerial {
 			if collision_line(x, y, x, y+sprite_get_height(sprite_index)-sprite_get_xoffset(sprite_index)+stepdowndist, o_solid, true, false) && !jump.hit {
 				move_and_collide(0, stepdowndist, o_solid, u, u, u, 0, 0);
-				log("wow!");
 			} else aerial = true;
-		}
+		}*/
 		leniance--;
 	}
 	if array_length(xtouching) {

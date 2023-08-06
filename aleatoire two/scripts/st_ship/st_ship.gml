@@ -6,7 +6,7 @@ function st_ship() {
 	accel = .1;
 	
 	if reload.hit {
-		c_eat_shit_asshole_fall_off_your_ship({spd: 1, dir: 325});
+		c_eat_shit_asshole_fall_off_your_ship({spd: 5, dir: 325});
 	}
 	
 	if left.hold dir = 180;
@@ -20,10 +20,13 @@ function st_ship() {
 	
 	//c_dospritesky();
 	
+	var thespeed = 4;
+	if shift.hold thespeed /= 2;
+	
 	if hput != 0 {
-		spd.h = lerp(spd.h, hput*walkspeed, airaccel);
+		spd.h = lerp(spd.h, hput*thespeed, .2);
 	} else {
-		spd.h = lerp(spd.h, hput*walkspeed, airfrict);
+		spd.h = lerp(spd.h, hput*thespeed, .1);
 	}
 	
 	

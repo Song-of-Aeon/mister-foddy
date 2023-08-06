@@ -326,6 +326,7 @@ new mapsetting("load", [["edit mode", "play game"], variable_struct_get_names(mp
 		var friend = mp[$options[1][opos[1]]];
 		c_loadmap(friend, opos[0]);
 		if opos[0] {
+			instance_create(0, 0, o_theenemy);
 			instance_destroy(o_mapper);
 			//log("enemied");
 			with o_enemy {
