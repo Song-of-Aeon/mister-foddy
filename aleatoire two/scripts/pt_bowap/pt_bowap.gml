@@ -49,14 +49,12 @@ function pt_everything() {
 			break;
 		case 2:
 			if ncm(30, c) {
-				var i;
-				for (i=0; i<4; i++) {
-					c_shoot(x, y, 2, easemult(ac_linear, count, 120, 30)+i*90, bul.enemy)
-				}
+				c_shootcircle(x, y, 2, iterations*45, 4, bul.enemy);
+				iterations++:
 			}
 			break;
 		case 3:
-			if ncm(40, c) c_shootcircle(x, y, 2, easemult(ac_siddn, count, 600, 1080)+count*.03, 6, bul.enemy, u, function() {vspd += .03});
+			if ncm(40, c) c_shootcircle(x, y, 2, easemult(ac_sin, count, 600, 1080)+count*.03, 6, bul.enemy, u, function() {vspd += .03});
 			break;
 		case 4:
 			if ncm(60, c) {
