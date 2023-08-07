@@ -138,10 +138,10 @@ function c_loadmap(map_, editing=false) {
 			if left && right {
 				image_index = 2;
 			}
-			if right && down && config[2][2] {
+			if right && down {
 				image_index = 10;
 			}
-			if left && down && config[0][2] {
+			if left && down {
 				image_index = 12;
 			}
 			if right && up {

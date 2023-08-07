@@ -1,4 +1,7 @@
-pdist -= .5;
+pdist -= .7;
+if point_distance(x, y, df.x, df.y) > 300 {
+	pdist -= .3;
+}
 	
 if pdist < 0 {
 	if ppos {

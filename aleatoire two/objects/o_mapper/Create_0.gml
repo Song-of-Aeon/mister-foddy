@@ -16,9 +16,9 @@ ydraw = 20;
 elementxdraw = 40;
 elementydraw = 40;
 
-if false {
+if true {
 	log(variable_struct_get_names(mp));
-	c_loadmap(mp.thegame2, true);
+	c_loadmap(mp.thegame3, true);
 	instance_create(0, 0, o_theenemy);
 	instance_destroy(o_mapper);
 	log("enemied");

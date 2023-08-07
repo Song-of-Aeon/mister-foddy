@@ -104,6 +104,7 @@
     {"name":"input_active","order":29,"path":"scripts/input_active/input_active.yy",},
     {"name":"array_find_index","order":5,"path":"scripts/array_find_index/array_find_index.yy",},
     {"name":"clampneg","order":4,"path":"scripts/clampneg/clampneg.yy",},
+    {"name":"ac_cos","order":2,"path":"animcurves/ac_cos/ac_cos.yy",},
     {"name":"c_null","order":11,"path":"scripts/c_null/c_null.yy",},
     {"name":"Sprite27","order":22,"path":"sprites/Sprite27/Sprite27.yy",},
     {"name":"txt_fartman","order":4,"path":"scripts/txt_fartman/txt_fartman.yy",},

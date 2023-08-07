@@ -63,9 +63,10 @@ function st_falling() {
 	}
 	if fallcount++ > 20 && abs(spd.v) < 1 && abs(spd.h) < 1 {
 		log("you got it!");
+		c_clearradius(df.x, df.y, 12);
 		state = st_man;
 		image_angle = 0;
-		y--;
+		y-=4;
 		fallcount = 0;
 	}
 }

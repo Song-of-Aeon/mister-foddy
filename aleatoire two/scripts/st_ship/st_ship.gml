@@ -67,6 +67,8 @@ function st_ship() {
 		} else {
 			pdist = point_distance(org.x, org.y, targ.x, targ.y);
 			spd.h = 0;
+			drawstate = st_windraw;
+			o_theenemy.pattern = c_null;
 		}
 	}
 }

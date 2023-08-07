@@ -24,9 +24,10 @@ function c_boardship() {
 	df.y = o_ship.y;
 	df.sprite_index = s_myship;
 	df.image_xscale = 1;
+	df.image_speed = 1;
 	instance_destroy(o_ship);
 	global.timescale = 1;
 	music_set(mus.grovular, 1);
 }
 
-nu song("grovular", "grovular", [m_grovman, m_grovship]);
+nu song("grovular", "grovular", [m_grovman, m_grovship], u, u, u, 18.986);

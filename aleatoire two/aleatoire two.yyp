@@ -127,6 +127,7 @@
     {"id":{"name":"input_active","path":"scripts/input_active/input_active.yy",},},
     {"id":{"name":"array_find_index","path":"scripts/array_find_index/array_find_index.yy",},},
     {"id":{"name":"clampneg","path":"scripts/clampneg/clampneg.yy",},},
+    {"id":{"name":"ac_cos","path":"animcurves/ac_cos/ac_cos.yy",},},
     {"id":{"name":"c_null","path":"scripts/c_null/c_null.yy",},},
     {"id":{"name":"Sprite27","path":"sprites/Sprite27/Sprite27.yy",},},
     {"id":{"name":"txt_fartman","path":"scripts/txt_fartman/txt_fartman.yy",},},

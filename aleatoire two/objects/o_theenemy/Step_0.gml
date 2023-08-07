@@ -42,6 +42,9 @@ repeat(c_getticks()) {
 				ppos++;
 			} else {
 				pdist = point_distance(org.x, org.y, targ.x, targ.y);
+				count -= .25;
+				x += irandom(4)-2;
+				y += irandom(4)-2;
 			}
 		}
 }
