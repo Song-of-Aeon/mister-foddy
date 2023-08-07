@@ -21,7 +21,7 @@ accel = .1;
 frict = .1;
 airaccel = .1;
 airfrict = .1;
-walkspeed = 1.9;
+walkspeed = 2.8;
 jumpspeed = 3.75;
 grav = .1;
 leniance = 0;
@@ -55,7 +55,7 @@ sprites = {
 	down: s_kyblock,
 	jump: s_kyblock,
 }*/
-sprite_index = s_when_im;
+sprite_index = s_myship;
 weapons = [
 	[wp[$"the commander video"]],
 ];
@@ -80,6 +80,7 @@ imageindex = 0;
 touchers = [];
 xdraw = -100;
 ydraw = 310;
+fallcount = 0;
 global.count = 0;
 global.me = id;
 #macro df global.me
@@ -92,3 +93,5 @@ global.me = id;
 
 camera_set_view_target(view_camera[0], o_persistent);
 camera_set_view_border(view_camera[0], MIDWID, MIDHEI);
+
+music_set(mus.grovular, 1);

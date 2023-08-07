@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Sprite27",
-    "path": "sprites/Sprite27/Sprite27.yy",
+    "name": "s_yourship",
+    "path": "sprites/s_yourship/s_yourship.yy",
   },
   "spriteMaskId": null,
   "visible": true,

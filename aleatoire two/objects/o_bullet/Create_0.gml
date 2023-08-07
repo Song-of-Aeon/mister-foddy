@@ -37,3 +37,8 @@ color = c_white;
 image_angle = point_direction(xprevious, yprevious, x, y)-90;
 
 getticks = c_getticks;
+
+
+ontouch = c_null;
+onstay = c_null;
+onleave = c_null;

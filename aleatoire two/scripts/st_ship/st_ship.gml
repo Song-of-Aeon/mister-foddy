@@ -5,23 +5,22 @@ function st_ship() {
 	
 	accel = .1;
 	
-	if reload.hit {
-		c_eat_shit_asshole_fall_off_your_ship({spd: 5, dir: 325});
-	}
-	
 	if left.hold dir = 180;
 	if right.hold dir = 0;
 	if down.hold dir = 270;
 	if up.hold dir = 90;
 	
+	var dude = collision_circle(x, y, 8, o_bullet, false, false);
+	if dude && dude.friendly == false {
+		c_eat_shit_asshole_fall_off_your_ship(dude);
+	}
 	
-    hput = right.hold-left.hold;
+    hput = right.hold-left.hold*.4;
     vput = down.hold-up.hold;
 	
 	//c_dospritesky();
 	
 	var thespeed = 4;
-	if shift.hold thespeed /= 2;
 	
 	if hput != 0 {
 		spd.h = lerp(spd.h, hput*thespeed, .2);
@@ -57,6 +56,7 @@ function st_ship() {
 	}*/
 	var pdir = point_direction(org.x, org.y, targ.x, targ.y);
 	var dude = distabs(pdir, pdist);
+	image_angle = pdir;
 	x = points[ppos].x+dude.x;
 	y = points[ppos].y+dude.y;
 	

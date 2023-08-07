@@ -4,10 +4,14 @@ function st_man() {
 	weapons[0][0].step(attack, alt);
 	accel = .1;
 	
-	if reload.hit || place_meeting(x, y, o_ship) {
-		c_boardship();
-	}
 	
+	
+	
+	if left.hold {
+		image_xscale = -1;
+	} else if right.hold {
+		image_xscale = 1;
+	}
 	
 	if left.hold dir = 180;
 	if right.hold dir = 0;
@@ -66,6 +70,7 @@ function st_man() {
 		leniance = lencount;
         aerial = false;
 		spd.v = 0;
+		sprite_index = s_running;
 	} else {
 		/*var stepdowndist = global.tilesize/3;
 		if !aerial {
@@ -74,8 +79,14 @@ function st_man() {
 			} else aerial = true;
 		}*/
 		leniance--;
+		sprite_index = s_grapple;
 	}
 	if array_length(xtouching) {
 		//spd.h = 0;
+	}
+	image_speed = abs(spd.h*.3);
+	
+	if reload.hit || place_meeting(x, y, o_ship) {
+		c_boardship();
 	}
 }

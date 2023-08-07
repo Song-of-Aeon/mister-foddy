@@ -23,6 +23,7 @@ var org = points[ppos];
 }*/
 var pdir = point_direction(org.x, org.y, targ.x, targ.y);
 var dude = distabs(pdir, pdist);
+image_angle = pdir;
 x = points[ppos].x+dude.x;
 y = points[ppos].y+dude.y;
 	

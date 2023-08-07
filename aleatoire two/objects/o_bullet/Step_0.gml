@@ -1,3 +1,5 @@
+image_speed = global.timescale*spd*.5;
+
 direction = dir;
 speed = spd*global.timescale;
 repeat(getticks()){

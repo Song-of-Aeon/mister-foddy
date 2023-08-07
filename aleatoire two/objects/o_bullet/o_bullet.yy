@@ -15,7 +15,10 @@
     "name": "bullet-likes",
     "path": "folders/Objects/bullet-likes.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "o_solid",
+    "path": "objects/o_solid/o_solid.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

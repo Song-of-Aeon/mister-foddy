@@ -1,8 +1,8 @@
 var z=0;
-repeat(9) {
-	
+repeat(60) {
+	nu tiletype(prt_elsewhere, z++, TILESET.ELSEWHERE, TT_SQUARE);
 }
-nu tiletype(prt_elsewhere, z++, TILESET.ELSEWHERE, TT_SQUARE);
+/*nu tiletype(prt_elsewhere, z++, TILESET.ELSEWHERE, TT_SQUARE);
 nu tiletype(prt_elsewhere, z++, TILESET.ELSEWHERE, TT_L45);
 nu tiletype(prt_elsewhere, z++, TILESET.ELSEWHERE, TT_LCS2);
 nu tiletype(prt_elsewhere, z++, TILESET.ELSEWHERE, TT_LCS1);
@@ -15,3 +15,5 @@ function c_spikelogic() {
 	df.spd.h = -2;
 	df.spd.v = -2;
 }
+
+*/

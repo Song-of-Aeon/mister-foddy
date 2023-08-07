@@ -1,3 +1,6 @@
+
+
+
 c_input();
 
 if !array_length(history) && surface_exists(application_surface) {

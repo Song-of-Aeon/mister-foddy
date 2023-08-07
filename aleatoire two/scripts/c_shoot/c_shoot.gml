@@ -85,7 +85,7 @@ function c_shootcircle(x, y, speed, origindirection, density, bullettype, color=
 		bulletcount++;
 	}
 	global.lololol = spddeviation;
-	with_array(bullets, function() {spd += seed.float(global.lololol*2)-global.lololol});
+	with_array(bullets, function() {spd += random(global.lololol*2)-global.lololol});
 	return bullets;
 }
 
@@ -102,7 +102,7 @@ function c_lasecircle(x, y, speed, length, width, origindirection, density, arch
 		bulletcount++;
 	}
 	global.lololol = spddeviation;
-	with_array(bullets, function() {spd += seed.float(global.lololol*2)-global.lololol});
+	with_array(bullets, function() {spd += random(global.lololol*2)-global.lololol});
 	return bullets;
 }
 

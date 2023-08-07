@@ -5,7 +5,7 @@
 }*/
 
 munction(despawn)();
-if !is_oob() && alpha > .1 && type != bul.particle {
+if false && !is_oob() && alpha > .1 && type != bul.particle {
 	var guy = Particle(x, y, function() {
 		//log(self);
 		if friendly {

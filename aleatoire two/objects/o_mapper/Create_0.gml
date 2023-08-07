@@ -16,7 +16,17 @@ ydraw = 20;
 elementxdraw = 40;
 elementydraw = 40;
 
-
+if false {
+	log(variable_struct_get_names(mp));
+	c_loadmap(mp.thegame2, true);
+	instance_create(0, 0, o_theenemy);
+	instance_destroy(o_mapper);
+	log("enemied");
+	with o_enemy {
+		step = archetype.step;
+	}
+	exit;
+}
 
 menuoptions = [
 /*new mapsetting("daft settings", [["work it", "make it", "do it", "makes us"], ["harder", "better", "faster", "stronger"]], function() {

@@ -33,7 +33,7 @@ function c_loadmap(map_, editing=false) {
 				map_.guys[i].onleave = script_get_index(map_.guys[i].onleave);
 			}*/
 			var newman = deep_copy(map_.guys[i]);
-			var chump = c_maketile(map_.guys[i].x, map_.guys[i].y, tl[map_.guys[i].tileset][map_.guys[i].index], newman.depth);
+			var chump = c_maketile(map_.guys[i].x, map_.guys[i].y, tl[map_.guys[i].tileset][map_.guys[i].index], 0);
 			
 			chump.links = newman.links;
 			//chump.depth = newman.depth;
@@ -103,4 +103,68 @@ function c_loadmap(map_, editing=false) {
 		global.currentspawn = map_.spawn;
 	}
 	if dissolve instance_destroy(o_mapper);
+	
+	var mytiles = instance_get_all(o_solid);
+	iterate mytiles to {
+		with mytiles[i] {
+			var config = [
+				[place_meeting(x-16, y-16, o_solid), place_meeting(x, y-16, o_solid), place_meeting(x+16, y-16, o_solid)],
+				[place_meeting(x-16, y, o_solid), 1, place_meeting(x+16, y, o_solid)],
+				[place_meeting(x-16, y+16, o_solid), place_meeting(x, y+16, o_solid), place_meeting(x+16, y+16, o_solid)],
+			];
+			
+			var left = config[1][0];
+			var right = config[1][2];
+			var up = config[0][1];
+			var down = config[2][1];
+			
+			image_index = 0;
+			
+			if right {
+				image_index = 1;
+			}
+			if left {
+				image_index = 3;
+			}
+			if down {
+				image_index = 13;
+			}
+			if up {
+				image_index = 33;
+			}
+			if up && down {
+				image_index = 23;
+			}
+			if left && right {
+				image_index = 2;
+			}
+			if right && down && config[2][2] {
+				image_index = 10;
+			}
+			if left && down && config[0][2] {
+				image_index = 12;
+			}
+			if right && up {
+				image_index = 30;
+			}
+			if left && up {
+				image_index = 32;
+			}
+			if left && right && down {
+				image_index = 11;
+			}
+			if left && right && up {
+				image_index = 31;
+			}
+			if up && left && down {
+				image_index = 22;
+			}
+			if up && right && down {
+				image_index = 20;
+			}
+			if up && left && right && down {
+				image_index = 21;
+			}
+		}
+	}
 }

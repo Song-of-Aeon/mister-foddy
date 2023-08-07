@@ -56,9 +56,5 @@ enum TILESET {
 
 global.tssprites = [
 	prt_elsewhere,
-	s_null,
-	s_null,
-	s_null,
-	s_null,
 ]
 
