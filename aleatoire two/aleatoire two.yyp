@@ -38,7 +38,10 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"45 degree slope","folderPath":"folders/Tilesets/TT/45 degree slope.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"cave story slope","folderPath":"folders/Tilesets/TT/cave story slope.yy",},
   ],
-  "IncludedFiles": [],
+  "IncludedFiles": [
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"readme.txt","CopyToMask":-1,"filePath":"datafiles",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"thegame3.aeon","CopyToMask":-1,"filePath":"datafiles",},
+  ],
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {

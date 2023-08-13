@@ -50,7 +50,7 @@ function pt_everything() {
 		case 2:
 			if ncm(30, c) {
 				c_shootcircle(x, y, 2, iterations*45, 4, bul.enemy);
-				iterations++:
+				iterations++;
 			}
 			break;
 		case 3:
